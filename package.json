@@ -16,12 +16,9 @@
     "url": "git+https://github.com/Misterr-H/react-native-human-pose.git"
   },
   "keywords": [
-    "react",
-    "native",
-    "human",
-    "pose",
-    "machine",
-    "learning",
+    "react-native",
+    "human pose",
+    "machine learning",
     "posenet"
   ],
   "author": "Misterr-H",
