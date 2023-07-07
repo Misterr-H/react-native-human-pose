@@ -1,0 +1,33 @@
+{
+  "name": "react-native-human-pose",
+  "version": "1.0.0",
+  "description": "A real time human pose detection using machine learning model posenet in react native.",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.72.1",
+    "react-native-webview": "^13.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Misterr-H/react-native-human-pose.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "human",
+    "pose",
+    "machine",
+    "learning",
+    "posenet"
+  ],
+  "author": "Misterr-H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Misterr-H/react-native-human-pose/issues"
+  },
+  "homepage": "https://github.com/Misterr-H/react-native-human-pose#readme"
+}
