@@ -5,11 +5,11 @@ A Light Weight, performative package to quickly get human pose from a mobile cam
 
 ## Installation
 ```
-npm i react-native-human-pose
+npm i react-native-human-pose react-native-webview
 ```
 OR
 ```
-yarn add react-native-human-pose
+yarn add react-native-human-pose react-native-webview
 ```
 ### Android
 Go to android/app/src/main/AndroidManifest.xml and add this line
@@ -53,6 +53,8 @@ const App = () => {
 
 export default App;
 ```
+A pose is an array of no of poses detected inside the frame
+
 ## Props Passed
 1. width?: number // Width for the video component
 2. height?: number // Height for the video component
