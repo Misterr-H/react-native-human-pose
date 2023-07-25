@@ -49,6 +49,7 @@ export default function HumanPose(p: HumanPoseProps) {
       javaScriptEnabled={true}
       domStorageEnabled={true}
       allowsInlineMediaPlayback={true}
+      limitsNavigationsToAppBoundDomains={true}
       onMessage={event => {
         try {
           const pose = JSON.parse(event.nativeEvent.data);
