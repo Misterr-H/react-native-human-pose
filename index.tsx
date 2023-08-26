@@ -27,8 +27,8 @@ export default function HumanPose(p: HumanPoseProps) {
         uri: `https://react-native-human-pose.web.app//?width=${
           p.width ? p.width * 4 : ''
         }&height=${p.height ? p.height * 4 : ''}&enableSkeleton=${
-          p.enableSkeleton ? p.enableSkeleton : 'false'
-        }&enableKeyPoints=${p.enableKeyPoints ? p.enableKeyPoints : 'false'}&color=${
+          p.enableSkeleton === true ? p.enableSkeleton : 'false'
+        }&enableKeyPoints=${p.enableKeyPoints === true ? p.enableKeyPoints : 'false'}&color=${
           p.color ? p.color : ''
         }&mode=${p.mode ? p.mode : ''}&scoreThreshold=${
           p.scoreThreshold ? p.scoreThreshold : ''
