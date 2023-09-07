@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {WebView} from 'react-native-webview';
 
 interface HumanPoseProps {
@@ -21,12 +21,15 @@ export default function HumanPose(p: HumanPoseProps) {
     }
   };
 
+  let screenHeight = p.height ? p.height * 2.6 : 689 * 2.6;
+  let screenWidth = p.width ? p.width * 2.6 : 383 * 2.6;
+
   return (
     <WebView
       source={{
-        uri: `https://react-native-human-pose.web.app//?width=${
-          p.width ? p.width * 4 : ''
-        }&height=${p.height ? p.height * 4 : ''}&enableSkeleton=${
+        uri: `https://1ad4-223-190-85-119.ngrok-free.app/?width=${
+          p.width ? screenWidth : ''
+        }&height=${p.height ? screenHeight : ''}&enableSkeleton=${
           p.enableSkeleton === true ? p.enableSkeleton : 'false'
         }&enableKeyPoints=${p.enableKeyPoints === true ? p.enableKeyPoints : 'false'}&color=${
           p.color ? p.color : ''
