@@ -27,7 +27,7 @@ export default function HumanPose(p: HumanPoseProps) {
   return (
     <WebView
       source={{
-        uri: `https://1ad4-223-190-85-119.ngrok-free.app/?width=${
+        uri: `https://react-native-human-pose.web.app//?width=${
           p.width ? screenWidth : ''
         }&height=${p.height ? screenHeight : ''}&enableSkeleton=${
           p.enableSkeleton === true ? p.enableSkeleton : 'false'
