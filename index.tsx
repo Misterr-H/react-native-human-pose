@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {WebView} from 'react-native-webview';
+import {Dimensions, Platform} from 'react-native';
 
 interface HumanPoseProps {
   width?: number;
@@ -12,6 +13,7 @@ interface HumanPoseProps {
   isBackCamera?: boolean;
   flipHorizontal?: boolean;
   onPoseDetected?: (pose: any) => void;
+  isFullScreen?: boolean;
 }
 
 export default function HumanPose(p: HumanPoseProps) {
@@ -21,15 +23,21 @@ export default function HumanPose(p: HumanPoseProps) {
     }
   };
 
-  let screenHeight = p.height ? p.height * 2.6 : 689 * 2.6;
-  let screenWidth = p.width ? p.width * 2.6 : 383 * 2.6;
+  let screenHeight = p.isFullScreen ? Dimensions.get('window').height : p.height ? p.height * 2.6 : 200 * 2.6;
+  let screenWidth = p.isFullScreen ? Dimensions.get('window').width : p.width ? p.width * 2.6 : 200 * 2.6;
+  
+  console.log('screenHeight', screenHeight);
+  console.log('screenWidth', screenWidth);
+  
+  
 
   return (
     <WebView
       source={{
-        uri: `https://react-native-human-pose.web.app//?width=${
+        uri: `https://react-native-human-pose.web.app/?width=${
           p.width ? screenWidth : ''
-        }&height=${p.height ? screenHeight : ''}&enableSkeleton=${
+        }&height=${p.height ? Platform.OS === 'ios' ? screenHeight : 300
+          : ''}&enableSkeleton=${
           p.enableSkeleton === true ? p.enableSkeleton : 'false'
         }&enableKeyPoints=${p.enableKeyPoints === true ? p.enableKeyPoints : 'false'}&color=${
           p.color ? p.color : ''
@@ -37,11 +45,11 @@ export default function HumanPose(p: HumanPoseProps) {
           p.scoreThreshold ? p.scoreThreshold : ''
         }&isBackCamera=${p.isBackCamera ? p.isBackCamera : ''}&flipHorizontal=${
           p.flipHorizontal ? p.flipHorizontal : ''
-        }`,
+        }&isFullScreen=${p.isFullScreen ? p.isFullScreen : ''}`,
       }}
       style={{
-        width: p.width ? p.width : 200,
-        height: p.height ? p.height : 200,
+        width: p.isFullScreen ? Dimensions.get('window').width : p.width ? p.width : 200,
+        height: p.isFullScreen ? Dimensions.get('window').height : p.height ? p.height : 200,
         // Dimensions.get('window').height / 2.8,
         borderRadius: 5,
         // borderWidth: 2,
