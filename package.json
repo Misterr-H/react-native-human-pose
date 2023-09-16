@@ -1,6 +1,6 @@
 {
   "name": "react-native-human-pose",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A real time human pose detection using machine learning model posenet in react native.",
   "main": "index.tsx",
   "scripts": {
