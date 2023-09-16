@@ -24,7 +24,7 @@ export default function HumanPose(p: HumanPoseProps) {
   };
 
   let screenHeight = p.isFullScreen ? Dimensions.get('window').height * 2 : p.height ? p.height * 2.6 : 200 * 2.6;
-  let screenWidth = p.isFullScreen ? Dimensions.get('window').width * 2 : p.width ? 300 * 2.6 : 200 * 2.6;
+  let screenWidth = p.isFullScreen ? Dimensions.get('window').width * 2 : p.width ? p.width * 2.6 : 200 * 2.6;
 
 
 
@@ -42,11 +42,11 @@ export default function HumanPose(p: HumanPoseProps) {
           p.scoreThreshold ? p.scoreThreshold : ''
         }&isBackCamera=${p.isBackCamera ? p.isBackCamera : ''}&flipHorizontal=${
           p.flipHorizontal ? p.flipHorizontal : ''
-        }}`,
+        }&isFullScreen=${p.isFullScreen ? p.isFullScreen : ''}`,
       }}
       style={{
-        width: p.isFullScreen ? Dimensions.get('window').width * 1.3 : p.width ? p.width : 200,
-        height: p.isFullScreen ? Dimensions.get('window').height * 1.3 : p.height ? p.height : 200,
+        width: p.isFullScreen ? Dimensions.get('window').width : p.width ? p.width : 200,
+        height: p.isFullScreen ? Dimensions.get('window').height : p.height ? p.height : 200,
         // Dimensions.get('window').height / 2.8,
         borderRadius: 5,
         // borderWidth: 2,
