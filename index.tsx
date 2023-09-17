@@ -31,10 +31,7 @@ export default function HumanPose(p: HumanPoseProps) {
   return (
     <WebView
       source={{
-        uri: `https://react-native-human-pose.web.app/?width=${
-          p.width ? screenWidth : ''
-        }&height=${p.height ? Platform.OS === 'ios' ? screenHeight : 300
-          : ''}&enableSkeleton=${
+        uri: `https://react-native-human-pose.web.app/?enableSkeleton=${
           p.enableSkeleton === true ? p.enableSkeleton : 'false'
         }&enableKeyPoints=${p.enableKeyPoints === true ? p.enableKeyPoints : 'false'}&color=${
           p.color ? p.color : ''
@@ -45,8 +42,8 @@ export default function HumanPose(p: HumanPoseProps) {
         }&isFullScreen=${p.isFullScreen ? p.isFullScreen : ''}`,
       }}
       style={{
-        width: p.isFullScreen ? Dimensions.get('window').width : p.width ? p.width : 200,
-        height: p.isFullScreen ? Dimensions.get('window').height : p.height ? p.height : 200,
+        width: p.isFullScreen ? p.width : p.width ? p.width : 200,
+        height: p.isFullScreen ? p.height : p.height ? p.height : 200,
         // Dimensions.get('window').height / 2.8,
         borderRadius: 5,
         // borderWidth: 2,
